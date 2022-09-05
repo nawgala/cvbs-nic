@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8f810184-485d-4d20-9dda-7d2ab172a348" activeEnvironment="Default" name="IPG-MobileMoneyService" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="052395d6-c71a-4b31-b9c5-4042ffab7003" wsaVersion="NONE" name="MobileMoneyServiceSoap12Binding" type="wsdl" bindingName="{http://com.ztesoft.zsmart/service}MobileMoneyServiceSoap12Binding" soapVersion="1_2" anonymous="optional" definition="file:/home/sampath/Project/ngit/custom-projects-etisalat/mrecharge-customization/apps/cvbs-nic-connector/doc/MobileMoneyService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap12Endpoint/</con:endpoint></con:endpoints><con:operation id="dcc5d577-c8da-4038-a5da-8c881d08639e" isOneWay="false" action="urn:createProfile" name="createProfile" bindingOperationName="createProfile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="970447e9-468c-4246-add2-3e55ec056958" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <xsd:createProfile>
+         <walletNo>?</walletNo>
+         <msisdn>?</msisdn>
+         <username>?</username>
+         <password>?</password>
+      </xsd:createProfile>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:createProfile"/></con:call></con:operation><con:operation id="b5cc72d9-f647-4960-8e00-abb239ed71bc" isOneWay="false" action="urn:getDetails" name="getDetails" bindingOperationName="getDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ef70de23-6f6f-4005-92ec-dca440194c64" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <xsd:getDetails>
+         <msisdn>?</msisdn>
+         <username>?</username>
+         <password>?</password>
+      </xsd:getDetails>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:getDetails"/></con:call></con:operation><con:operation id="35ccd9e3-0a44-4428-b918-becf48cd45f0" isOneWay="false" action="urn:KYCValidation" name="KYCValidation" bindingOperationName="KYCValidation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8303725a-fc61-4a6e-9fd8-eaefddde97c5" name="nic_info_request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/axis2/services/MobileMoneyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <xsd:KYCValidationRequest>
+         <msisdn>0721112223</msisdn>
+         <username>0722222222</username>
+         <password>password</password>
+      </xsd:KYCValidationRequest>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:KYCValidation"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fa8e3df0-d917-45ef-b521-a447afbec22f" isOneWay="false" action="urn:RegistrationInfo" name="RegistrationInfo" bindingOperationName="RegistrationInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0d5a4cfd-5433-4ea2-a6b4-a9a4f9a0dc98" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <xsd:RegistrationInfoReq>
+         <wallet_no>?</wallet_no>
+         <msisdn>?</msisdn>
+         <username>?</username>
+         <password>?</password>
+      </xsd:RegistrationInfoReq>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:RegistrationInfo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c4ad3a39-e5d6-4979-8731-6331daae0e57" isOneWay="false" action="urn:RetrieveCustInfo" name="RetrieveCustInfo" bindingOperationName="RetrieveCustInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="07c52fc5-d872-4b45-8085-c934dee0e189" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <xsd:RetrieveCustInfoReq>
+         <MSISDN>?</MSISDN>
+      </xsd:RetrieveCustInfoReq>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:RetrieveCustInfo"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="548313f5-4415-40aa-be56-4901521621b2" wsaVersion="NONE" name="MobileMoneyServiceSoap11Binding" type="wsdl" bindingName="{http://com.ztesoft.zsmart/service}MobileMoneyServiceSoap11Binding" soapVersion="1_1" anonymous="optional" definition="file:/home/sampath/Project/ngit/custom-projects-etisalat/mrecharge-customization/apps/cvbs-nic-connector/doc/MobileMoneyService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/sampath/Project/ngit/custom-projects-etisalat/mrecharge-customization/apps/cvbs-nic-connector/doc/MobileMoneyService.wsdl"><con:part><con:url>file:/home/sampath/Project/ngit/custom-projects-etisalat/mrecharge-customization/apps/cvbs-nic-connector/doc/MobileMoneyService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://com.ztesoft.zsmart/service" xmlns:tns="http://com.ztesoft.zsmart/service" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ns="http://com.ztesoft.zsmart/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>MobileMoneyService</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://com.ztesoft.zsmart/xsd">
+      <xs:complexType name="tKYCValidationRequest">
+        <xs:sequence>
+          <xs:element name="msisdn" type="xs:string"/>
+          <xs:element name="username" type="xs:string"/>
+          <xs:element name="password" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KYCValidationRequest" type="ns:tKYCValidationRequest"/>
+      <xs:complexType name="tKYCValidationResponse">
+        <xs:sequence>
+          <xs:element name="status" type="xs:string"/>
+          <xs:element name="description" nillable="true" type="xs:string"/>
+          <xs:element name="msisdn" type="xs:string"/>
+          <xs:element name="nic" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KYCValidationResponse" type="ns:tKYCValidationResponse"/>
+      <xs:complexType name="tRegistrationInfoReq">
+        <xs:sequence>
+          <xs:element name="wallet_no" type="xs:string"/>
+          <xs:element name="msisdn" type="xs:string"/>
+          <xs:element name="username" type="xs:string"/>
+          <xs:element name="password" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RegistrationInfoReq" type="ns:tRegistrationInfoReq"/>
+      <xs:complexType name="tRegistrationInfoRsp">
+        <xs:sequence>
+          <xs:element name="status" type="xs:string"/>
+          <xs:element name="description" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RegistrationInfoRsp" type="ns:tRegistrationInfoRsp"/>
+      <xs:complexType name="tRetrieveCustInfoReq">
+        <xs:sequence>
+          <xs:element name="MSISDN" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RetrieveCustInfoReq" type="ns:tRetrieveCustInfoReq"/>
+      <xs:complexType name="tRetrieveCustInfoRsp">
+        <xs:sequence>
+          <xs:element name="MSISDN" type="xs:string"/>
+          <xs:element name="NIC" nillable="true" type="xs:string"/>
+          <xs:element name="Address1" nillable="true" type="xs:string"/>
+          <xs:element name="Address2" nillable="true" type="xs:string"/>
+          <xs:element name="Address3" nillable="true" type="xs:string"/>
+          <xs:element name="FirstName" nillable="true" type="xs:string"/>
+          <xs:element name="LastName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RetrieveCustInfoRsp" type="ns:tRetrieveCustInfoRsp"/>
+      <xs:complexType name="tcreateProfile">
+        <xs:sequence>
+          <xs:element name="walletNo" type="xs:string"/>
+          <xs:element name="msisdn" type="xs:string"/>
+          <xs:element name="username" type="xs:string"/>
+          <xs:element name="password" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="createProfile" type="ns:tcreateProfile"/>
+      <xs:complexType name="tcreateProfileResponse">
+        <xs:sequence>
+          <xs:element name="status" type="xs:string"/>
+          <xs:element name="description" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="createProfileResponse" type="ns:tcreateProfileResponse"/>
+      <xs:complexType name="tgetDetails">
+        <xs:sequence>
+          <xs:element name="msisdn" type="xs:string"/>
+          <xs:element name="username" type="xs:string"/>
+          <xs:element name="password" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getDetails" type="ns:tgetDetails"/>
+      <xs:complexType name="tgetDetailsResponse">
+        <xs:sequence>
+          <xs:element name="status" type="xs:string"/>
+          <xs:element name="description" type="xs:string"/>
+          <xs:element name="msisdn" type="xs:string"/>
+          <xs:element name="nic" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getDetailsResponse" type="ns:tgetDetailsResponse"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="createProfileResponse">
+    <wsdl:part name="parameters" element="ns:createProfileResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RetrieveCustInfoRequest">
+    <wsdl:part name="parameters" element="ns:RetrieveCustInfoReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDetailsRequest">
+    <wsdl:part name="parameters" element="ns:getDetails"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RegistrationInfoResponse">
+    <wsdl:part name="parameters" element="ns:RegistrationInfoRsp"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RegistrationInfoRequest">
+    <wsdl:part name="parameters" element="ns:RegistrationInfoReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createProfileRequest">
+    <wsdl:part name="parameters" element="ns:createProfile"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RetrieveCustInfoResponse">
+    <wsdl:part name="parameters" element="ns:RetrieveCustInfoRsp"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="KYCValidationRequest">
+    <wsdl:part name="parameters" element="ns:KYCValidationRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDetailsResponse">
+    <wsdl:part name="parameters" element="ns:getDetailsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="KYCValidationResponse">
+    <wsdl:part name="parameters" element="ns:KYCValidationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MobileMoneyServicePortType">
+    <wsdl:operation name="KYCValidation">
+      <wsdl:input message="tns:KYCValidationRequest" wsaw:Action="urn:KYCValidation"></wsdl:input>
+      <wsdl:output message="tns:KYCValidationResponse" wsaw:Action="urn:KYCValidationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCustInfo">
+      <wsdl:input message="tns:RetrieveCustInfoRequest" wsaw:Action="urn:RetrieveCustInfo"></wsdl:input>
+      <wsdl:output message="tns:RetrieveCustInfoResponse" wsaw:Action="urn:RetrieveCustInfoRsp"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetails">
+      <wsdl:input message="tns:getDetailsRequest" wsaw:Action="urn:getDetails"></wsdl:input>
+      <wsdl:output message="tns:getDetailsResponse" wsaw:Action="urn:getDetailsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProfile">
+      <wsdl:input message="tns:createProfileRequest" wsaw:Action="urn:createProfile"></wsdl:input>
+      <wsdl:output message="tns:createProfileResponse" wsaw:Action="urn:createProfileResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrationInfo">
+      <wsdl:input message="tns:RegistrationInfoRequest" wsaw:Action="urn:RegistrationInfo"></wsdl:input>
+      <wsdl:output message="tns:RegistrationInfoResponse" wsaw:Action="urn:RegistrationInfoRsp"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MobileMoneyServiceSoap11Binding" type="tns:MobileMoneyServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="KYCValidation">
+      <soap:operation soapAction="urn:KYCValidation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCustInfo">
+      <soap:operation soapAction="urn:RetrieveCustInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetails">
+      <soap:operation soapAction="urn:getDetails" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProfile">
+      <soap:operation soapAction="urn:createProfile" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrationInfo">
+      <soap:operation soapAction="urn:RegistrationInfo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobileMoneyServiceHttpBinding" type="tns:MobileMoneyServicePortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="KYCValidation">
+      <http:operation location="KYCValidation"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCustInfo">
+      <http:operation location="RetrieveCustInfo"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetails">
+      <http:operation location="getDetails"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProfile">
+      <http:operation location="createProfile"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrationInfo">
+      <http:operation location="RegistrationInfo"/>
+      <wsdl:input>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobileMoneyServiceSoap12Binding" type="tns:MobileMoneyServicePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="KYCValidation">
+      <soap12:operation soapAction="urn:KYCValidation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveCustInfo">
+      <soap12:operation soapAction="urn:RetrieveCustInfo" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDetails">
+      <soap12:operation soapAction="urn:getDetails" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createProfile">
+      <soap12:operation soapAction="urn:createProfile" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrationInfo">
+      <soap12:operation soapAction="urn:RegistrationInfo" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MobileMoneyService">
+    <wsdl:port name="MobileMoneyServiceHttpEndpoint" binding="tns:MobileMoneyServiceHttpBinding">
+      <http:address location="http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpEndpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="MobileMoneyServiceHttpSoap11Endpoint" binding="tns:MobileMoneyServiceSoap11Binding">
+      <soap:address location="http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap11Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="MobileMoneyServiceHttpSoap12Endpoint" binding="tns:MobileMoneyServiceSoap12Binding">
+      <soap12:address location="http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap12Endpoint/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap11Endpoint/</con:endpoint></con:endpoints><con:operation id="db4d98f1-333a-47f6-894c-bbfa1347230b" isOneWay="false" action="urn:createProfile" name="createProfile" bindingOperationName="createProfile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d95a27f1-73ed-4399-ba11-aada7585df49" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xsd:createProfile>
+         <walletNo>?</walletNo>
+         <msisdn>?</msisdn>
+         <username>?</username>
+         <password>?</password>
+      </xsd:createProfile>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:createProfile"/></con:call></con:operation><con:operation id="84e8a470-f4fd-488c-bb1f-d420040bf056" isOneWay="false" action="urn:getDetails" name="getDetails" bindingOperationName="getDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a01bd0b4-2e49-4589-ae79-8fdb2e6bae48" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xsd:getDetails>
+         <msisdn>?</msisdn>
+         <username>?</username>
+         <password>?</password>
+      </xsd:getDetails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:getDetails"/></con:call></con:operation><con:operation id="b7f8fa5d-cc56-4b9f-8a8d-fc3e286442ac" isOneWay="false" action="urn:KYCValidation" name="KYCValidation" bindingOperationName="KYCValidation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5d3b1ca5-fe16-45eb-8e8c-ac8543ec4a67" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xsd:KYCValidationRequest>
+         <msisdn>?</msisdn>
+         <username>?</username>
+         <password>?</password>
+      </xsd:KYCValidationRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:KYCValidation"/></con:call></con:operation><con:operation id="b228d155-7383-4bcd-9806-4e3d0a4a93e1" isOneWay="false" action="urn:RegistrationInfo" name="RegistrationInfo" bindingOperationName="RegistrationInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e8cd6d52-528c-4636-bd20-72a523454495" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xsd:RegistrationInfoReq>
+         <wallet_no>?</wallet_no>
+         <msisdn>?</msisdn>
+         <username>?</username>
+         <password>?</password>
+      </xsd:RegistrationInfoReq>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:RegistrationInfo"/></con:call></con:operation><con:operation id="32ad5ef8-3a78-4c72-ae8c-76791ae808af" isOneWay="false" action="urn:RetrieveCustInfo" name="RetrieveCustInfo" bindingOperationName="RetrieveCustInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="db1b94a2-2e23-41f6-b03a-8cdc1465d70f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://com.ztesoft.zsmart/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <xsd:RetrieveCustInfoReq>
+         <MSISDN>?</MSISDN>
+      </xsd:RetrieveCustInfoReq>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:RetrieveCustInfo"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

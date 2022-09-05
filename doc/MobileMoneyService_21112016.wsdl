@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://com.ztesoft.zsmart/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://com.ztesoft.zsmart/service" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://com.ztesoft.zsmart/service">
+    <wsdl:documentation>MobileMoneyService</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://com.ztesoft.zsmart/xsd">
+            <xs:complexType name="tKYCValidationRequest">
+                <xs:sequence>
+                    <xs:element name="msisdn" type="xs:string"/>
+                    <xs:element name="username" type="xs:string"/>
+                    <xs:element name="password" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="KYCValidationRequest" type="ns:tKYCValidationRequest"/>
+            <xs:complexType name="tKYCValidationResponse">
+                <xs:sequence>
+                    <xs:element name="status" type="xs:string"/>
+                    <xs:element name="description" nillable="true" type="xs:string"/>
+                    <xs:element name="msisdn" type="xs:string"/>
+                    <xs:element name="nic" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="KYCValidationResponse" type="ns:tKYCValidationResponse"/>
+            <xs:complexType name="tRegistrationInfoReq">
+                <xs:sequence>
+                    <xs:element name="wallet_no" type="xs:string"/>
+                    <xs:element name="msisdn" type="xs:string"/>
+                    <xs:element name="username" type="xs:string"/>
+                    <xs:element name="password" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="RegistrationInfoReq" type="ns:tRegistrationInfoReq"/>
+            <xs:complexType name="tRegistrationInfoRsp">
+                <xs:sequence>
+                    <xs:element name="status" type="xs:string"/>
+                    <xs:element name="description" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="RegistrationInfoRsp" type="ns:tRegistrationInfoRsp"/>
+            <xs:complexType name="tRetrieveCustInfoReq">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="RetrieveCustInfoReq" type="ns:tRetrieveCustInfoReq"/>
+            <xs:complexType name="tRetrieveCustInfoRsp">
+                <xs:sequence>
+                    <xs:element name="MSISDN" type="xs:string"/>
+                    <xs:element name="NIC" nillable="true" type="xs:string"/>
+                    <xs:element name="Address1" nillable="true" type="xs:string"/>
+                    <xs:element name="Address2" nillable="true" type="xs:string"/>
+                    <xs:element name="Address3" nillable="true" type="xs:string"/>
+                    <xs:element name="FirstName" nillable="true" type="xs:string"/>
+                    <xs:element name="LastName" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="RetrieveCustInfoRsp" type="ns:tRetrieveCustInfoRsp"/>
+            <xs:complexType name="tcreateProfile">
+                <xs:sequence>
+                    <xs:element name="walletNo" type="xs:string"/>
+                    <xs:element name="msisdn" type="xs:string"/>
+                    <xs:element name="username" type="xs:string"/>
+                    <xs:element name="password" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="createProfile" type="ns:tcreateProfile"/>
+            <xs:complexType name="tcreateProfileResponse">
+                <xs:sequence>
+                    <xs:element name="status" type="xs:string"/>
+                    <xs:element name="description" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="createProfileResponse" type="ns:tcreateProfileResponse"/>
+            <xs:complexType name="tgetDetails">
+                <xs:sequence>
+                    <xs:element name="msisdn" type="xs:string"/>
+                    <xs:element name="username" type="xs:string"/>
+                    <xs:element name="password" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getDetails" type="ns:tgetDetails"/>
+            <xs:complexType name="tgetDetailsResponse">
+                <xs:sequence>
+                    <xs:element name="status" type="xs:string"/>
+                    <xs:element name="description" type="xs:string"/>
+                    <xs:element name="msisdn" type="xs:string"/>
+                    <xs:element name="nic" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getDetailsResponse" type="ns:tgetDetailsResponse"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="KYCValidationRequest">
+        <wsdl:part name="parameters" element="ns:KYCValidationRequest"/>
+    </wsdl:message>
+    <wsdl:message name="KYCValidationResponse">
+        <wsdl:part name="parameters" element="ns:KYCValidationResponse"/>
+    </wsdl:message>
+    <wsdl:message name="RetrieveCustInfoRequest">
+        <wsdl:part name="parameters" element="ns:RetrieveCustInfoReq"/>
+    </wsdl:message>
+    <wsdl:message name="RetrieveCustInfoResponse">
+        <wsdl:part name="parameters" element="ns:RetrieveCustInfoRsp"/>
+    </wsdl:message>
+    <wsdl:message name="getDetailsRequest">
+        <wsdl:part name="parameters" element="ns:getDetails"/>
+    </wsdl:message>
+    <wsdl:message name="getDetailsResponse">
+        <wsdl:part name="parameters" element="ns:getDetailsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="createProfileRequest">
+        <wsdl:part name="parameters" element="ns:createProfile"/>
+    </wsdl:message>
+    <wsdl:message name="createProfileResponse">
+        <wsdl:part name="parameters" element="ns:createProfileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="RegistrationInfoRequest">
+        <wsdl:part name="parameters" element="ns:RegistrationInfoReq"/>
+    </wsdl:message>
+    <wsdl:message name="RegistrationInfoResponse">
+        <wsdl:part name="parameters" element="ns:RegistrationInfoRsp"/>
+    </wsdl:message>
+    <wsdl:portType name="MobileMoneyServicePortType">
+        <wsdl:operation name="KYCValidation">
+            <wsdl:input message="tns:KYCValidationRequest" wsaw:Action="urn:KYCValidation"/>
+            <wsdl:output message="tns:KYCValidationResponse" wsaw:Action="urn:KYCValidationResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="RetrieveCustInfo">
+            <wsdl:input message="tns:RetrieveCustInfoRequest" wsaw:Action="urn:RetrieveCustInfo"/>
+            <wsdl:output message="tns:RetrieveCustInfoResponse" wsaw:Action="urn:RetrieveCustInfoRsp"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDetails">
+            <wsdl:input message="tns:getDetailsRequest" wsaw:Action="urn:getDetails"/>
+            <wsdl:output message="tns:getDetailsResponse" wsaw:Action="urn:getDetailsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="createProfile">
+            <wsdl:input message="tns:createProfileRequest" wsaw:Action="urn:createProfile"/>
+            <wsdl:output message="tns:createProfileResponse" wsaw:Action="urn:createProfileResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="RegistrationInfo">
+            <wsdl:input message="tns:RegistrationInfoRequest" wsaw:Action="urn:RegistrationInfo"/>
+            <wsdl:output message="tns:RegistrationInfoResponse" wsaw:Action="urn:RegistrationInfoRsp"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="MobileMoneyServiceSoap11Binding" type="tns:MobileMoneyServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="KYCValidation">
+            <soap:operation soapAction="urn:KYCValidation" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RetrieveCustInfo">
+            <soap:operation soapAction="urn:RetrieveCustInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDetails">
+            <soap:operation soapAction="urn:getDetails" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createProfile">
+            <soap:operation soapAction="urn:createProfile" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RegistrationInfo">
+            <soap:operation soapAction="urn:RegistrationInfo" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="MobileMoneyServiceSoap12Binding" type="tns:MobileMoneyServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="KYCValidation">
+            <soap12:operation soapAction="urn:KYCValidation" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RetrieveCustInfo">
+            <soap12:operation soapAction="urn:RetrieveCustInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDetails">
+            <soap12:operation soapAction="urn:getDetails" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createProfile">
+            <soap12:operation soapAction="urn:createProfile" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RegistrationInfo">
+            <soap12:operation soapAction="urn:RegistrationInfo" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="MobileMoneyServiceHttpBinding" type="tns:MobileMoneyServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="KYCValidation">
+            <http:operation location="KYCValidation"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RetrieveCustInfo">
+            <http:operation location="RetrieveCustInfo"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDetails">
+            <http:operation location="getDetails"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="createProfile">
+            <http:operation location="createProfile"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="RegistrationInfo">
+            <http:operation location="RegistrationInfo"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="MobileMoneyService">
+        <wsdl:port name="MobileMoneyServiceHttpSoap11Endpoint" binding="tns:MobileMoneyServiceSoap11Binding">
+            <soap:address location="http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="MobileMoneyServiceHttpSoap12Endpoint" binding="tns:MobileMoneyServiceSoap12Binding">
+            <soap12:address location="http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="MobileMoneyServiceHttpEndpoint" binding="tns:MobileMoneyServiceHttpBinding">
+            <http:address location="http://10.23.24.33:8998/services/MobileMoneyService.MobileMoneyServiceHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

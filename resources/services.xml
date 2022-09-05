@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.6.3  Built on : Jun 27, 2015 (11:17:49 BST) -->
+<serviceGroup>
+    <service name="MobileMoneyService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="com.hsenidmobile.ipg.sim.nic.server.MobileMoneyServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">com.hsenidmobile.ipg.sim.nic.server.MobileMoneyServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">false</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="KYCValidation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://com.ztesoft.zsmart/service">
+            <actionMapping>urn:KYCValidation</actionMapping>
+            <outputActionMapping>urn:KYCValidationResponse</outputActionMapping>
+        </operation>
+        <operation name="RetrieveCustInfo" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://com.ztesoft.zsmart/service">
+            <actionMapping>urn:RetrieveCustInfo</actionMapping>
+            <outputActionMapping>urn:RetrieveCustInfoRsp</outputActionMapping>
+        </operation>
+        <operation name="getDetails" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://com.ztesoft.zsmart/service">
+            <actionMapping>urn:getDetails</actionMapping>
+            <outputActionMapping>urn:getDetailsResponse</outputActionMapping>
+        </operation>
+        <operation name="createProfile" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://com.ztesoft.zsmart/service">
+            <actionMapping>urn:createProfile</actionMapping>
+            <outputActionMapping>urn:createProfileResponse</outputActionMapping>
+        </operation>
+        <operation name="RegistrationInfo" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://com.ztesoft.zsmart/service">
+            <actionMapping>urn:RegistrationInfo</actionMapping>
+            <outputActionMapping>urn:RegistrationInfoRsp</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>
